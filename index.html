@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy Birthday! 🎂</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+
+    <!-- Header Section -->
+    <header class="hero-section">
+        <div class="birthday-badge">🎈 It's Your Special Day! 🎈</div>
+        <h1 class="birthday-title">Happy Birthday!</h1>
+        <p class="birthday-subtitle">Wishing you a day filled with love, laughter, and unforgettable memories! 🎉</p>
+    </header>
+
+    <!-- Birthday Message Section -->
+    <section class="message-section">
+        <div class="container">
+            <div class="message-card">
+                <h2>🎊 A Special Message For You 🎊</h2>
+                <p>
+                    Today is not just another day on the calendar—it's a celebration of YOU! 
+                    Every moment you've lived has brought joy to those around you, and today we 
+                    celebrate the wonderful person you are. May this year bring you endless happiness, 
+                    exciting adventures, and dreams come true. Remember, age is just a number, but the 
+                    memories we create are timeless. Here's to another year of laughter, love, and 
+                    making beautiful memories together!
+                </p>
+                <p>
+                    You deserve all the cake, all the presents, and all the love in the world. 
+                    Thank you for being such an amazing person and bringing light into our lives. 
+                    May your birthday be as special as you are! 🌟
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Cutting Section -->
+    <section class="cake-section">
+        <div class="container">
+            <h2 class="section-title">🎂 Make A Wish & Cut The Cake! 🎂</h2>
+            <p class="cake-instruction">Click on the cake to light the candles, then click "Cut the Cake"!</p>
+            
+            <div class="cake-container">
+                <div id="cake" class="cake">
+                    <!-- Cake layers -->
+                    <div class="cake-layer layer-3">
+                        <div class="candle" id="candle1">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle" id="candle2">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="candle" id="candle3">
+                            <div class="flame"></div>
+                        </div>
+                    </div>
+                    <div class="cake-layer layer-2"></div>
+                    <div class="cake-layer layer-1"></div>
+                    <div class="cake-plate"></div>
+                </div>
+                
+                <div class="cake-slice-container" id="sliceContainer"></div>
+                
+                <button id="cutButton" class="cut-button" disabled>
+                    🔪 Cut the Cake
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Balloons Section -->
+    <section class="balloons-section">
+        <div class="container">
+            <h2 class="section-title">🎈 Pop the Balloons! 🎈</h2>
+            <p class="balloon-instruction">Click on the balloons to pop them and reveal surprises!</p>
+            <div class="balloons-container" id="balloonsContainer">
+                <div class="balloon balloon-red" data-message="You're Amazing! ⭐">🎈</div>
+                <div class="balloon balloon-blue" data-message="Best Wishes! 💙">🎈</div>
+                <div class="balloon balloon-yellow" data-message="Keep Shining! ✨">🎈</div>
+                <div class="balloon balloon-green" data-message="You're Loved! 💚">🎈</div>
+                <div class="balloon balloon-purple" data-message="Stay Awesome! 🌟">🎈</div>
+                <div class="balloon balloon-pink" data-message="Dream Big! 🌈">🎈</div>
+            </div>
+            <div id="balloonMessage" class="balloon-message"></div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">📸 Beautiful Memories 📸</h2>
+            <p class="gallery-subtitle">Click on any photo to view it larger!</p>
+            
+            <div class="photo-grid">
+                <div class="photo-card" data-photo="1">
+                    <div class="photo-placeholder">
+                        <span class="photo-icon">🎉</span>
+                        <p>Birthday Celebration</p>
+                    </div>
+                </div>
+                <div class="photo-card" data-photo="2">
+                    <div class="photo-placeholder">
+                        <span class="photo-icon">🎂</span>
+                        <p>Sweet Moments</p>
+                    </div>
+                </div>
+                <div class="photo-card" data-photo="3">
+                    <div class="photo-placeholder">
+                        <span class="photo-icon">🎁</span>
+                        <p>Special Gifts</p>
+                    </div>
+                </div>
+                <div class="photo-card" data-photo="4">
+                    <div class="photo-placeholder">
+                        <span class="photo-icon">🌟</span>
+                        <p>Happy Times</p>
+                    </div>
+                </div>
+                <div class="photo-card" data-photo="5">
+                    <div class="photo-placeholder">
+                        <span class="photo-icon">💝</span>
+                        <p>Precious Memories</p>
+                    </div>
+                </div>
+                <div class="photo-card" data-photo="6">
+                    <div class="photo-placeholder">
+                        <span class="photo-icon">🎊</span>
+                        <p>Joy & Laughter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <div id="modalPhoto" class="modal-photo"></div>
+        </div>
+    </div>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="section-title">⏰ Time Since Your Birthday Started ⏰</h2>
+            <div class="countdown-display">
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with 💖 for an amazing person!</p>
+        <p>© 2024 Birthday Celebration • May all your wishes come true! ✨</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
